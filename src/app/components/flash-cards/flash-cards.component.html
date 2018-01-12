@@ -1,0 +1,32 @@
+<p>
+  flash-cards works!
+</p>
+<div class="album text-muted">
+  <div class="container">
+    <div class="row">
+      <!-- <div class="card-columns"> -->
+          <div class="card" *ngFor="let flashCard of flashCards">
+            <!-- <a routerLink="/flash-cards/{{card.id}}"></a> -->
+            <div *ngIf="flashCard.imageSrc">
+            <img *ngIf="!flashCard.imageSrc" src="http://via.placeholder.com/280/ad240f/ffffff?text={{flashCard.title}}" class="card-img-top" alt="Card image cap">
+            <!-- <img *ngIf="flashCard.imageSrc"  src="{{flashCard.imageSrc}}" class="card-img-top" alt="Card image cap"> -->
+            <a routerLink="/flash-cards/{{flashCard.id}}">
+              <img *ngIf="flashCard.imageSrc"  src="{{flashCard.imageSrc}}" class="card-img-top" alt="Card image cap">
+            </a>
+            <!-- <p class="card-text">{{flashCard.title}}</p> -->
+            <div class="card-body">
+              <h5 class="card-title">{{flashCard.title}}</h5>
+              <p class="card-text">{{flashCard.subtitle}}</p>
+              <!-- <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let fact of flashCard.facts">{{fact}}</li>
+              </ul> -->
+            </div>
+            <!-- <div class="card-footer">
+              <small class="text-muted">woot </small>
+            </div> -->
+          </div>
+        </div>
+    <!-- </div> -->
+    </div>
+  </div>
+</div>

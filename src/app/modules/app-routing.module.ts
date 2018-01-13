@@ -6,10 +6,10 @@ import { FlashCardsComponent } from '../components/flash-cards/flash-cards.compo
 import { FlashCardDetailComponent } from '../components/flash-card-detail/flash-card-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'flash-cards/:id', component: FlashCardDetailComponent },
-  { path: 'flash-cards', component: FlashCardsComponent }
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full', data: { name : 'home' } },
+  { path: 'dashboard', component: DashboardComponent, data: { name : 'dashboard' } },
+  { path: 'flash-cards/:id', component: FlashCardDetailComponent, data: { name : 'flash-card-detail' } },
+  { path: 'flash-cards', component: FlashCardsComponent, data: { name : 'flash-card' } }
 ];
 
 @NgModule({

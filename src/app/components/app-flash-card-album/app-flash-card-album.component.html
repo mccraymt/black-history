@@ -1,0 +1,33 @@
+<div class="album text-muted">
+  <div class="container">
+    <div class="row">
+      <!-- <div class="card-columns"> -->
+        <div class="card" *ngFor="let flashCard of flashCards" class="col-12 col-sm-12 col-md-6 col-lg-4" >
+            <a routerLink="/flash-cards/{{flashCard.id}}">
+              <div class="card-image-container">
+                <img *ngIf="!flashCard.imageSrc" src="http://via.placeholder.com/280/ad240f/ffffff?text={{flashCard.title}}" class="card-img-top" alt="Card image cap">
+                <img *ngIf="flashCard.imageSrc"  src="{{flashCard.imageSrc}}" class="card-img-top" alt="Card image cap">
+                <div class="card-image-overlay">
+                  <div class="card-image-overlay-text">
+                    <h5 class="card-title">{{flashCard.title}}</h5>
+                    <!-- <p>{{flashCard.subtitle}}</p> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="card-body">
+              <!-- <h5 class="card-title">{{flashCard.title}}</h5>
+              <p class="card-text">{{flashCard.subtitle}}</p> -->
+              <ul *ngIf="showDetails" class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let fact of flashCard.facts">{{fact}}</li>
+              </ul>
+            </div>
+            <!-- <div class="card-footer">
+              <small class="text-muted">woot </small>
+            </div> -->
+        </div>
+
+    <!-- </div> -->
+    </div>
+  </div>
+</div>

@@ -17,6 +17,7 @@ export class FlashCardDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.flashCard = null;
     this.getFlashCard();
   }
 

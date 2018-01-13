@@ -1,19 +1,42 @@
 <!-- <section class="jumbotron text-center" [ngStyle]="{'background-image': 'url(https://www.thelibertyconservative.com/wp-content/uploads/2017/04/images-1483856142883-1483856067938-Angela-Davis-.jpg)'}"> -->
-<section class="jumbotron text-center" >
-<!-- <section class="jumbotron text-center" [ngStyle]="{'background-image': 'url(' + flashCard.imageSrc + ')'}"> -->
-  <img *ngIf="flashCard.imageSrc"  src="{{flashCard.imageSrc}}" class="card-img-top" alt="Card image cap">
-    <img *ngIf="!flashCard.imageSrc" src="http://via.placeholder.com/280/ad240f/ffffff?text={{flashCard.title}}" class="card-img-top" alt="Card image cap">
-    
-  <div class="container">
-    <!-- <p class="lead text-muted">To the many untold stories, achievements, and unknown people that have given shape, color, and definition to the worlds of academia, science, civil rights, business, the arts, and more.</p> -->
-    
-    
-    <h1 class="jumbotron-heading">{{flashCard.title}}</h1>
-    <h4 class="jumbotron-heading">{{flashCard.subtitle}}</h4>
-    <!-- <p>
-      
-      <a href="#" class="btn btn-primary">Main call to action</a>
-      <a href="#" class="btn btn-secondary">Secondary action</a>
-    </p> -->
-  </div>
-</section>
+  <div class="site-wrapper" >
+  <!-- <div class="site-wrapper" [ngStyle]="{'background': 'url(' + flashCard.imageSrc + ') no-repeat center center'}" > -->
+      <!-- <img class="site-background-image" src="{{flashCard.imageSrc}}" /> -->
+      <div class="site-wrapper-inner">
+          <!-- [ngStyle]="{'background-image': 'url(' + flashCard.imageSrc + ')'}" -->
+        <div class="cover-container">
+
+          <main role="main" class="inner cover">
+            <h1 class="cover-heading">{{ flashCard.title }}</h1>
+            <p class="lead">{{ flashCard.subtitle }}</p>
+            <!-- <app-flash-card [flashCard]="flashCard" [showDetails]=true [showImageOverlay]=false ></app-flash-card> -->
+            <div class="card" class="col-12 col-sm-12 col-md-6 col-lg-4" >
+                <a routerLink="/flash-cards/{{flashCard.id}}">
+                  <div class="card-image-container">
+                    <img *ngIf="!flashCard.imageSrc" src="http://via.placeholder.com/280/ad240f/ffffff?text={{flashCard.title}}" class="card-img-top" alt="Card image cap">
+                    <img *ngIf="flashCard.imageSrc"  src="{{flashCard.imageSrc}}" class="card-img-top" alt="Card image cap">
+                    <div class="card-image-overlay">
+                      <div class="card-image-overlay-text">
+                        <h5 class="card-title">{{flashCard.title}}</h5>
+                        <!-- <p>{{flashCard.subtitle}}</p> -->
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">{{flashCard.title}}</h5>
+                  <p class="card-text">{{flashCard.subtitle}}</p> -->
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let fact of flashCard.facts">{{fact}}</li>
+                  </ul>
+                </div>
+                <!-- <div class="card-footer">
+                  <small class="text-muted">woot </small>
+                </div> -->
+            </div>
+          </main>
+        </div>
+
+      </div>
+
+    </div>

@@ -11,6 +11,8 @@ import { AppRoutingModule } from './modules/app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FlashCardsComponent } from './components/flash-cards/flash-cards.component';
 import { FlashCardDetailComponent } from './components/flash-card-detail/flash-card-detail.component';
+import { AppFlashCardComponent } from './components/app-flash-card/app-flash-card.component';
+import { AppFlashCardAlbumComponent } from './components/app-flash-card-album/app-flash-card-album.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { FlashCardDetailComponent } from './components/flash-card-detail/flash-c
     AppNavbarComponent,
     DashboardComponent,
     FlashCardsComponent,
-    FlashCardDetailComponent
+    FlashCardDetailComponent,
+    AppFlashCardComponent,
+    AppFlashCardAlbumComponent
   ],
   imports: [
     BrowserModule,
